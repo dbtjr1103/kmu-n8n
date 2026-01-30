@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "google_auth": false,
+  "agents": {
+    "librarian": {
+      "model": "zen/big-pickle"
+    },
+    "explore": {
+      "model": "zen/big-pickle"
+    },
+    "oracle": {
+      "model": "zen/big-pickle"
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "zen/big-pickle"
+    },
+    "document-writer": {
+      "model": "zen/big-pickle"
+    },
+    "multimodal-looker": {
+      "model": "zen/big-pickle"
+    }
+  }
+}

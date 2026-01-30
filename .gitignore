@@ -1,0 +1,35 @@
+# 환경 변수 및 민감 정보
+.env
+*.env
+!.env.example
+
+# Docker 볼륨 및 데이터
+shared/*
+!shared/.gitkeep
+
+# 로그 파일
+*.log
+logs/
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules
+node_modules/
+
+# 임시 파일
+*.tmp
+*.temp
+.cache/
+
+# Backup 파일
+*.bak
+*.backup
