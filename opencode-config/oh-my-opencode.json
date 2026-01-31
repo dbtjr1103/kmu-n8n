@@ -19,6 +19,12 @@
     },
     "multimodal-looker": {
       "model": "zen/big-pickle"
+    },
+    "sisyphus": {
+      "model": "zen/big-pickle"
+    },
+    "prometheus": {
+      "model": "zen/big-pickle"
     }
   }
 }

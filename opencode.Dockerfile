@@ -2,18 +2,10 @@ FROM ghcr.io/anomalyco/opencode:latest
 
 USER root
 
-# Install dependencies
-RUN apk add --no-cache curl bash unzip git
+# Install dependencies including Node.js and npm
+RUN apk add --no-cache curl bash unzip git nodejs npm
 
-# Install bun
-RUN curl -fsSL https://bun.sh/install | bash
-ENV BUN_INSTALL="/root/.bun"
-ENV PATH="$BUN_INSTALL/bin:$PATH"
-
-# Install oh-my-opencode
-RUN bun install -g oh-my-opencode
-
-# Initialize oh-my-opencode
-RUN bunx oh-my-opencode install || true
+# Install oh-my-opencode globally via npm (ignore scripts to avoid binary issues)
+RUN npm install -g oh-my-opencode --ignore-scripts
 
 WORKDIR /workspace

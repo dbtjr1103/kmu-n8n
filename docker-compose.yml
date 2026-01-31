@@ -59,8 +59,10 @@ services:
       - "8181:8181"
     command: web --port 8181 --hostname 0.0.0.0
     environment:
-      - HOME=/home/node
       - TERM=xterm-256color
+      # OpenCode 서버 인증
+      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME:-}
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD:-}
       # AI API Keys (.env 파일에서 설정)
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
       - OPENAI_API_KEY=${OPENAI_API_KEY:-}
@@ -68,7 +70,7 @@ services:
     volumes:
       - opencode_workspace:/workspace
       - ./shared:/shared  # n8n과 파일 공유
-      - ./opencode-config:/root/.config/opencode:ro  # Oh My OpenCode 설정
+      - ./opencode-config:/root/.config/opencode  # Oh My OpenCode 설정 (읽기/쓰기)
     working_dir: /workspace
     networks:
       - n8n-network
